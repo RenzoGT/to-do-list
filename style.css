@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: rgb(255, 196, 0);
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+h1 {
+  color: white;
+  margin-top: 10rem;
+  font-size: 3rem;
+}
+
+.input-container {
+  background-color: white;
+  display: flex;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.input-container,
+#list,
+#list #list-item {
+  width: 30rem;
+}
+
+.input-container,
+#list-item {
+  padding: 1rem;
+}
+
+.input-container input {
+  border: none;
+}
+
+.input-container button {
+  padding: 0.3rem;
+}
+
+input,
+button {
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  font-family: inherit;
+  height: 2rem;
+  outline: none;
+}
+
+input {
+  font-size: 1rem;
+  width: 23rem;
+}
+
+#list-item,
+#hidden,
+.button-box {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#list-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+#list-item button {
+  display: inline;
+  width: 2rem;
+}
+
+p {
+  max-width: 20rem;
+  overflow: hidden;
+}
+
+.button-box {
+  width: 4.2rem;
+}
+
+#hidden {
+  background-color: white;
+  border-radius: 0.5rem;
+  justify-content: center;
+  min-height: 5rem;
+  min-width: 10rem;
+  max-width: 20rem;
+  padding: 1rem;
+  position: absolute;
+}
+
+.hid-message {
+  opacity: 0;
+}
+
+/* ANIMATIONS */
+
+button {
+  transition: 0.3s all;
+}
+
+#add-button:hover {
+  background-color: rgb(255, 253, 218);
+}
+
+#done-button:hover {
+  background-color: rgb(60, 172, 60);
+}
+
+#delete-button:hover {
+  background-color: rgb(161, 51, 51);
+}
+
+#list-item {
+  animation: appear 0.5s ease;
+}
+
+.disappear {
+  transform: translateY(-50%);
+  transition: 0.3s all;
+  opacity: 0;
+}
+
+.show-message {
+  animation: message-appear 4s ease;
+}
+
+@keyframes message-appear {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .input-container,
+  #list,
+  #list #list-item {
+    width: 23rem;
+  }
+
+  input,
+  #add-button {
+    height: 3rem;
+  }
+}
